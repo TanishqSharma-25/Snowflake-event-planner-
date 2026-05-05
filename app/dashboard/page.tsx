@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export default async function DashboardPage(){
     const session = await getSession()
     if (!session?.data?.user) {
-    redirect("/login"); // or wherever your auth page is
+    redirect("/auth/sign-in"); // or wherever your auth page is
   }
     return <DashboardContent  userId={session.data.user.id} />
 }
